@@ -1,0 +1,43 @@
+{% set pageName = 'index' %}
+
+{% extends "layout.njk" %}
+
+{% block meta %} 
+  {% import 'macros/meta-macro.njk' as meta %}
+  {{ meta.basicMeta(data.meta) }}
+{% endblock %}
+
+{% block js %}
+  <script src="/js/main.js" defer></script>
+
+  {% if environment === "production" %}
+    <script src="/sw.js" async></script>
+  {% endif %}
+{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+  <div class="page">
+    <header>
+      <h1 class="page__title">{{data.header.title}}</h1>
+      <h4 class="page__subtitle">{{data.header.subtitle}}</h4>
+    </header>
+
+    <section class="page__info">
+      <div class="page__col page_right">
+        {% include 'partials/contacts.njk' %}
+        {% include 'partials/experience.njk' %}
+      </div>
+      <div class="page__col page_left">
+        {% include 'partials/skills.njk' %}
+        {% include 'partials/projects.njk' %}
+        {% include 'partials/education.njk' %}
+        {% include 'partials/languages.njk' %}
+      </div>
+    </section>
+  </div>
+{% endblock %}

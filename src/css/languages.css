@@ -1,0 +1,14 @@
+@import './variables.css';
+
+.languages {
+  &__list {
+    @media only screen and (--small) {
+      list-style: none;
+      padding: 0;
+    }
+  }
+
+  &__item {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,63 @@
+@import './variables.css';
+
+.page {
+  text-align: center;
+
+  @media only screen and (--small) {
+    padding-bottom: 30px;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: center;
+
+    @media only screen and (--small) {
+      flex-direction: column;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+
+    @media only screen and (--small) {
+      width: auto;
+    }
+
+    @media only print {
+      width: 95%;
+    }
+  }
+
+  &_right {
+    text-align: right;
+    margin-right: 20px;
+
+    @media only screen and (--small) {
+      text-align: center;
+      margin: 0 10px;
+    }
+  }
+
+  &_left {
+    text-align: left;
+    margin-left: 20px;
+
+    @media only screen and (--small) {
+      text-align: center;
+      margin: 0 10px;
+    }
+  }
+
+  &__title {
+    font-weight: normal;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 0;
+  }
+
+  &__subtitle {
+    margin: 5px 0 40px;
+  }
+}

@@ -1,0 +1,91 @@
+{
+    "data": {
+      "meta": {
+        "locale": "en",
+        "title": "Boris Ryabov",
+        "type": "article",
+        "image": "http://bsryabov.ru/img/me.png",
+        "url": "http://bsryabov.ru",
+        "description": "Boris Ryabov - Full Stack Javascript Developer",
+        "author": "Boris Ryabov",
+        "copyright": "Boris Ryabov",
+        "application-name": "bsryabov"
+      },
+      "header": {
+        "title": "Boris Ryabov",
+        "subtitle": "Javascript developer"
+      },
+      "contacts": {
+        "photo": "/img/me.png",
+        "email": "contact@bsryabov.ru",
+        "telegram": "rvboris",
+        "github": "rvboris",
+        "linkedin": "rvboris"
+      },
+      "skills": {
+        "title": "Actual skills",
+        "items": [
+          {
+            "title": "client",
+            "list": ["react", "redux", "vue", "webpack", "gulp"]
+          },
+          {
+            "title": "backend",
+            "list": ["koa", "express", "meteor", "loopback"]
+          },
+          {
+            "title": "tests",
+            "list": ["ava", "nightmare", "mocha", "supertest"]
+          },
+          {
+            "title": "db",
+            "list": ["mongo", "apollo", "postgres"]
+          },
+          {
+            "title": "devops",
+            "list": ["docker", "nginx", "CI", "jenkins"]
+          }
+        ]
+      },
+      "experience": {
+        "title": "Work experience",
+        "items": [
+          {
+            "position": "Programmer",
+            "place": "Yandex.Money",
+            "period": "oct 2015 — currently time",
+            "description": "en/yamoney"
+          },
+          {
+            "position": "Lead web-developer",
+            "place": "E-Citrus",
+            "period": "oct 2012 — oct 2015",
+            "description": "en/e-citrus"
+          },
+          {
+            "position": "Programmer",
+            "place": "ENGECON",
+            "period": "sept 2010 — oct 2012",
+            "description": "en/engecon"
+          }
+        ]
+      },
+      "projects": {
+        "title": "Active open source projects"
+      },
+      "education": {
+        "title": "Education",
+        "period": "2005 — 2009",
+        "place": "Saint Petersburg State University of Aerospace Instrumentation",
+        "description": "Specialized secondary education, Software computer technology and automated systems"
+      },
+      "languages": {
+        "title": "Languages",
+        "items": [
+          "Russian — native",
+          "English — starter"
+        ]
+      }
+    }
+  }
+  

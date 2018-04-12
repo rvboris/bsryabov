@@ -1,0 +1,7 @@
+.contacts {
+  &__photo {
+    border-radius: 5px;
+    width: width('me.png');
+    height: height('me.png');
+  }
+}

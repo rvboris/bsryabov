@@ -1,0 +1,9 @@
+<section>
+  <h3>{{data.languages.title}}</h3>
+
+  <ul class="languages__list">
+    {% for item in data.languages.items %}
+    <li class="languages__item">{{item}}</li>
+    {% endfor %}
+  </ul>
+</section>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{data.meta.locale}}">
+  <head>
+    {% block meta %} {% endblock %}
+    {% block css %} {% endblock %}
+  </head>
+  <body>
+    <!-- You write code for this content block in another file -->
+
+    {% block content %} {% endblock %}
+    <script>
+      window.env = '{{environment}}';
+    </script>
+
+    {% block js %} {% endblock %}
+  </body>
+</html>

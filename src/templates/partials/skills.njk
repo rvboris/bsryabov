@@ -1,0 +1,10 @@
+<section class="skills">
+  <h3 class="skills__title">{{data.skills.title}}</h3>
+
+  <dl>
+    {% for item in data.skills.items %}
+    <dt class="skills__item-title">{{item.title}}</dt>
+    <dd class="skills__item-content">{{item.list | join(', ')}}</dd>
+    {% endfor %}
+  </dl>
+</section>

@@ -1,0 +1,22 @@
+@import './variables.css';
+
+.experience {
+  &__item {
+    margin-bottom: 35px;
+  }
+
+  &__position {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+
+  &__period {
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+  }
+
+  &__description {
+    line-height: 1.4rem;
+  }
+}

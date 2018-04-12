@@ -1,0 +1,36 @@
+{% macro basicMeta(meta) %}
+  <meta charset="utf-8" />
+  <meta name="description" content="{{meta.description}}" lang="{{meta.locale}}">
+  <meta name='viewport' content='initial-scale=1, viewport-fit=cover, minimal-ui'>
+  <link rel="alternate" hreflang="{{ meta.locale }}" href="{{ meta.url }}" />
+
+  <title>{{ meta.title }}</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#a6a6a6">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-title" content="Boris Ryabov">
+  <meta name="application-name" content="Boris Ryabov">
+  <meta name="msapplication-TileColor" content="#333333">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <script type="application/ld+json">
+    { 
+      "@context": "http://schema.org", 
+      "@type": "WebSite", 
+      "url": "{{ meta.url }}", 
+      "name": "{{ meta.title }}",
+      "author": {
+        "@type": "Person",
+        "name": "Boris Ryabov"
+      },
+      "image": "{{meta.image}}",
+      "description": "{{ meta.description }}",
+      "publisher": "Boris Ryabov",
+    }
+  </script>
+{% endmacro %}

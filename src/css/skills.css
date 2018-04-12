@@ -1,0 +1,16 @@
+@import './variables.css';
+
+.skills {
+  &__title {
+    margin-top: 0;
+  }
+
+  &__item-title {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+  }
+
+  &__item-content {
+    margin: 0 20px 20px;
+  }
+}

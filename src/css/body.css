@@ -1,0 +1,26 @@
+@import './variables.css';
+
+/* stylelint-disable-next-line at-rule-no-unknown */
+@import-normalize;
+
+html,
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  color: var(--main-color);
+  margin: 0;
+}
+
+a,
+a:visited {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h3 {
+  page-break-before: always;
+}

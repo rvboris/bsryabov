@@ -1,0 +1,12 @@
+@import './variables.css';
+
+.education {
+  &__period {
+    color: var(--secondary-color);
+  }
+
+  &__description {
+    font-size: 0.95rem;
+    padding-left: 20px;
+  }
+}

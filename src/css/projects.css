@@ -1,0 +1,9 @@
+@import './variables.css';
+
+.projects {
+  &__link,
+  &__link:visited {
+    color: var(--main-color);
+    text-decoration: underline;
+  }
+}

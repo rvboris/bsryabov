@@ -1,0 +1,7 @@
+:root {
+  --main-color: #000;
+  --secondary-color: #8a8e91;
+  --link-color: #3c79ff;
+
+  @custom-media --small (max-width: 767px);
+}

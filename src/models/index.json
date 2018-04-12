@@ -1,0 +1,90 @@
+{
+  "data": {
+    "meta": {
+      "locale": "ru",
+      "title": "Борис Рябов",
+      "type": "article",
+      "image": "http://bsryabov.ru/img/me.png",
+      "url": "http://bsryabov.ru",
+      "description": "Boris Ryabov - Full Stack Javascript Developer",
+      "author": "Boris Ryabov",
+      "copyright": "Boris Ryabov",
+      "application-name": "bsryabov"
+    },
+    "header": {
+      "title": "Борис Рябов",
+      "subtitle": "Javascript разработчик"
+    },
+    "contacts": {
+      "photo": "/img/me.png",
+      "email": "contact@bsryabov.ru",
+      "telegram": "rvboris",
+      "github": "rvboris",
+      "linkedin": "rvboris"
+    },
+    "skills": {
+      "title": "Актуальные навыки",
+      "items": [
+        {
+          "title": "client",
+          "list": ["react", "redux", "vue", "webpack", "gulp"]
+        },
+        {
+          "title": "backend",
+          "list": ["koa", "express", "meteor", "loopback"]
+        },
+        {
+          "title": "tests",
+          "list": ["ava", "nightmare", "mocha", "supertest"]
+        },
+        {
+          "title": "db",
+          "list": ["mongo", "apollo", "postgres"]
+        },
+        {
+          "title": "devops",
+          "list": ["docker", "nginx", "CI", "jenkins"]
+        }
+      ]
+    },
+    "experience": {
+      "title": "Опыт работы",
+      "items": [
+        {
+          "position": "Программист",
+          "place": "Яндекс.Деньги",
+          "period": "окт 2015 — настоящее время",
+          "description": "yamoney"
+        },
+        {
+          "position": "Ведущий веб разработчик",
+          "place": "E-Citrus",
+          "period": "окт 2012 — окт 2015",
+          "description": "e-citrus"
+        },
+        {
+          "position": "Программист",
+          "place": "ENGECON",
+          "period": "сент 2010 — окт 2012",
+          "description": "engecon"
+        }
+      ]
+    },
+    "projects": {
+      "title": "Активные проекты"
+    },
+    "education": {
+      "title": "Образование",
+      "period": "2005 — 2009",
+      "place": "Санкт-Петербургский государственный университет аэрокосмического приборостроения",
+      "description": "Средне-специальное образование, Программное обеспечение вычислительной техники и автоматизированных систем"
+    },
+    "languages": {
+      "title": "Языки",
+      "items": [
+        "Русский — родной",
+        "English — starter"
+      ]
+    }
+  }
+}
