@@ -39,7 +39,7 @@
         },
         {
           "title": "db",
-          "list": ["mongo", "apollo", "postgres"]
+          "list": ["mongo", "graphql", "postgres"]
         },
         {
           "title": "devops",
