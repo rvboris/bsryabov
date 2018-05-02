@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: node:alpine
+    steps:
+      - checkout
+      - run: yarn install
+      - run: npm run lint
+      - run: npm run build
