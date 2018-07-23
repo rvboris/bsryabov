@@ -58,7 +58,7 @@
     "sw-precache": "^5.2.1",
     "vinyl-named": "^1.1.0",
     "webpack": "^4.2.0",
-    "webpack-stream": "^4.0.2"
+    "webpack-stream": "^5.0.0"
   },
   "dependencies": {
     "postcss-normalize": "^5.0.0"
