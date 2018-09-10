@@ -61,6 +61,6 @@
     "webpack-stream": "^5.0.0"
   },
   "dependencies": {
-    "postcss-normalize": "^5.0.0"
+    "postcss-normalize": "^7.0.0"
   }
 }
