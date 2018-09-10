@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:7.10
+      - image: circleci/node:10
     working_directory: ~/repo
 
     steps:
@@ -11,7 +11,12 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           - v1-dependencies-
-      - run: sudo yarn global add greenkeeper-lockfile@1
+      - run:
+          name: prepare greenkeeper-lockfile
+          command: |
+            echo 'export PATH=$(yarn global bin):$PATH' >> $BASH_ENV
+            source $BASH_ENV
+            yarn global add greenkeeper-lockfile@1
       - run: yarn install
       - run: greenkeeper-lockfile-update
       - save_cache:
