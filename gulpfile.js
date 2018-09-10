@@ -119,24 +119,22 @@ gulp.task('img', (done) => {
   pump(pumpTasks, done);
 });
 
-gulp.task('manifest', () =>
-  gulp
-    .src([
-      `${SOURCE_PATH}/manifest.json`,
-      `${SOURCE_PATH}/browserconfig.xml`,
-    ])
-    .pipe(gulp.dest(BUILD_PATH)));
+gulp.task('manifest', () => gulp
+  .src([
+    `${SOURCE_PATH}/manifest.json`,
+    `${SOURCE_PATH}/browserconfig.xml`,
+  ])
+  .pipe(gulp.dest(BUILD_PATH)));
 
 gulp.task('assets', gulp.parallel('css', 'js', 'img', 'manifest'));
 
-gulp.task('revision', gulp.series('assets', () =>
-  gulp.src(`${BUILD_PATH}/**/*.{css,js}`)
-    .pipe(debug({ title: 'revision' }))
-    .pipe(rev())
-    .pipe(gulp.dest(BUILD_PATH))
-    .pipe(revdel())
-    .pipe(rev.manifest())
-    .pipe(gulp.dest(BUILD_PATH))));
+gulp.task('revision', gulp.series('assets', () => gulp.src(`${BUILD_PATH}/**/*.{css,js}`)
+  .pipe(debug({ title: 'revision' }))
+  .pipe(rev())
+  .pipe(gulp.dest(BUILD_PATH))
+  .pipe(revdel())
+  .pipe(rev.manifest())
+  .pipe(gulp.dest(BUILD_PATH))));
 
 gulp.task('rev-replace', gulp.series('html', 'revision', () => {
   const manifest = gulp.src(`${BUILD_PATH}/rev-manifest.json`);
