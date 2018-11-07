@@ -31,7 +31,7 @@
         },
         {
           "title": "backend",
-          "list": ["koa", "express", "meteor", "loopback"]
+          "list": ["typescript", "koa", "express", "meteor", "loopback"]
         },
         {
           "title": "tests",

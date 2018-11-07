@@ -5,7 +5,7 @@ import gulp from 'gulp';
 import nunjucksRender from 'gulp-nunjucks-render';
 import data from 'gulp-data';
 import concat from 'gulp-concat';
-import csso from 'gulp-csso';
+import cleanCSS from 'gulp-clean-css';
 import htmlmin from 'gulp-htmlmin';
 import imagemin from 'gulp-imagemin';
 import postcss from 'gulp-postcss';
@@ -20,16 +20,15 @@ import webpack from 'webpack';
 import gulpWebpack from 'webpack-stream';
 import assets from 'postcss-assets';
 import nested from 'postcss-nested';
-import cssnext from 'postcss-cssnext';
+import cssenv from 'postcss-preset-env';
 import reporter from 'postcss-browser-reporter';
 import cssimport from 'postcss-import';
 import browserSync from 'browser-sync';
+import workbox from 'workbox-build';
 import webpackConfig from './webpack.config';
 
 const bsServer = browserSync.create();
-
 const pump = require('pump');
-const swPrecache = require('sw-precache');
 
 const BUILD_PATH = './build';
 const SOURCE_PATH = './src';
@@ -84,11 +83,11 @@ gulp.task('css', (done) => {
         relative: true,
       }),
       normalize(),
-      cssnext(),
+      cssenv(),
       reporter(),
     ]),
     concat('styles.css'),
-    production(csso()),
+    production(cleanCSS()),
     gulp.dest(`${BUILD_PATH}/css`),
     bsServer.stream(),
   ];
@@ -145,10 +144,33 @@ gulp.task('rev-replace', gulp.series('html', 'revision', () => {
 }));
 
 gulp.task('service-worker', (done) => {
-  swPrecache.write(`${BUILD_PATH}/sw.js`, {
-    staticFileGlobs: [`${BUILD_PATH}/**/*.{js,html,css,jpg,png,gif,svg}`],
-    stripPrefix: BUILD_PATH,
-  }, done);
+  return workbox.generateSW({
+    globDirectory: BUILD_PATH,
+    globPatterns: ['**/*.{js,html,css,jpg,png,gif,svg}'],
+    swDest: `${BUILD_PATH}/sw.js`,
+    clientsClaim: true,
+    skipWaiting: true,
+    runtimeCaching: [
+      {
+        urlPattern: new RegExp('https://fonts.googleapis.com'),
+        handler: 'staleWhileRevalidate',
+      },
+      {
+        urlPattern: new RegExp('https://travis-ci.org'),
+        handler: 'staleWhileRevalidate',
+      },
+    ],
+  }).then(({ warnings }) => {
+    // eslint-disable-next-line
+    for (const warning of warnings) {
+      // eslint-disable-next-line
+      console.warn(warning);
+    }
+
+    done();
+  }).catch((error) => {
+    done(error);
+  });
 });
 
 gulp.task('build', gulp.series('clean', gulp.parallel('html', 'assets')));

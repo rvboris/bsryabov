@@ -9,10 +9,6 @@
 
 {% block js %}
   <script src="/js/main.js" defer></script>
-
-  {% if environment === "production" %}
-    <script src="/sw.js" async></script>
-  {% endif %}
 {% endblock %}
 
 {% block css %}

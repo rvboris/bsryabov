@@ -27,11 +27,11 @@
         "items": [
           {
             "title": "client",
-            "list": ["react", "redux", "vue", "webpack", "gulp"]
+            "list": ["vue", "react", "redux", "webpack", "gulp"]
           },
           {
             "title": "backend",
-            "list": ["koa", "express", "meteor", "loopback"]
+            "list": ["typescript", "nest", "koa", "express", "meteor", "loopback"]
           },
           {
             "title": "tests",
