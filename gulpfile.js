@@ -143,35 +143,33 @@ gulp.task('rev-replace', gulp.series('html', 'revision', () => {
     .pipe(gulp.dest(BUILD_PATH));
 }));
 
-gulp.task('service-worker', (done) => {
-  return workbox.generateSW({
-    globDirectory: BUILD_PATH,
-    globPatterns: ['**/*.{js,html,css,jpg,png,gif,svg}'],
-    swDest: `${BUILD_PATH}/sw.js`,
-    clientsClaim: true,
-    skipWaiting: true,
-    runtimeCaching: [
-      {
-        urlPattern: new RegExp('https://fonts.googleapis.com'),
-        handler: 'staleWhileRevalidate',
-      },
-      {
-        urlPattern: new RegExp('https://travis-ci.org'),
-        handler: 'staleWhileRevalidate',
-      },
-    ],
-  }).then(({ warnings }) => {
+gulp.task('service-worker', done => workbox.generateSW({
+  globDirectory: BUILD_PATH,
+  globPatterns: ['**/*.{js,html,css,jpg,png,gif,svg}'],
+  swDest: `${BUILD_PATH}/sw.js`,
+  clientsClaim: true,
+  skipWaiting: true,
+  runtimeCaching: [
+    {
+      urlPattern: new RegExp('https://fonts.googleapis.com'),
+      handler: 'staleWhileRevalidate',
+    },
+    {
+      urlPattern: new RegExp('https://travis-ci.org'),
+      handler: 'staleWhileRevalidate',
+    },
+  ],
+}).then(({ warnings }) => {
+  // eslint-disable-next-line
+  for (const warning of warnings) {
     // eslint-disable-next-line
-    for (const warning of warnings) {
-      // eslint-disable-next-line
-      console.warn(warning);
-    }
+    console.warn(warning);
+  }
 
-    done();
-  }).catch((error) => {
-    done(error);
-  });
-});
+  done();
+}).catch((error) => {
+  done(error);
+}));
 
 gulp.task('build', gulp.series('clean', gulp.parallel('html', 'assets')));
 
