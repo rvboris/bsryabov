@@ -153,11 +153,7 @@ gulp.task('service-worker', done => workbox.generateSW({
     {
       urlPattern: new RegExp('https://fonts.googleapis.com'),
       handler: 'staleWhileRevalidate',
-    },
-    {
-      urlPattern: new RegExp('https://travis-ci.org'),
-      handler: 'staleWhileRevalidate',
-    },
+    }
   ],
 }).then(({ warnings }) => {
   // eslint-disable-next-line
