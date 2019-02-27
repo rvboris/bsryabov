@@ -56,6 +56,6 @@
     "vinyl-named": "^1.1.0",
     "webpack": "^4.29.0",
     "webpack-stream": "^5.2.1",
-    "workbox-build": "^3.6.3"
+    "workbox-build": "^4.0.0"
   }
 }
