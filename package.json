@@ -33,7 +33,7 @@
     "gulp-debug": "^4.0.0",
     "gulp-environments": "^0.1.2",
     "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^5.0.3",
+    "gulp-imagemin": "^6.0.0",
     "gulp-nunjucks-render": "^2.2.2",
     "gulp-postcss": "^8.0.0",
     "gulp-rev": "^9.0.0",
