@@ -152,7 +152,7 @@ gulp.task('service-worker', done => workbox.generateSW({
   runtimeCaching: [
     {
       urlPattern: new RegExp('https://fonts.googleapis.com'),
-      handler: 'staleWhileRevalidate',
+      handler: 'StaleWhileRevalidate',
     },
   ],
 }).then(({ warnings }) => {
