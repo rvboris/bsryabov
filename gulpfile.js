@@ -35,7 +35,7 @@ const SOURCE_PATH = './src';
 
 const { production } = environments;
 
-const reload = glob => (done) => {
+const reload = (glob) => (done) => {
   bsServer.reload(glob);
   done();
 };
@@ -96,9 +96,10 @@ gulp.task('css', (done) => {
 });
 
 gulp.task('js', () => {
-  const config = Object.assign({}, webpackConfig, {
+  const config = {
+    ...webpackConfig,
     mode: getEnvironment(),
-  });
+  };
 
   return gulp.src(`${SOURCE_PATH}/js/main.js`)
     .pipe(named())
@@ -143,7 +144,7 @@ gulp.task('rev-replace', gulp.series('html', 'revision', () => {
     .pipe(gulp.dest(BUILD_PATH));
 }));
 
-gulp.task('service-worker', done => workbox.generateSW({
+gulp.task('service-worker', (done) => workbox.generateSW({
   globDirectory: BUILD_PATH,
   globPatterns: ['**/*.{js,html,css,jpg,png,gif,svg}'],
   swDest: `${BUILD_PATH}/sw.js`,
