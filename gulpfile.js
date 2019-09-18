@@ -113,7 +113,6 @@ gulp.task('img', (done) => {
     debug({ title: 'img:' }),
     production(imagemin()),
     gulp.dest(`${BUILD_PATH}/img`),
-    bsServer.stream(),
   ];
 
   pump(pumpTasks, done);

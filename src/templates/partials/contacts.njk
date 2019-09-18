@@ -1,10 +1,18 @@
 <section class="contacts">
-  <img src="{{data.contacts.photo}}" class="contacts__photo" width="100" height="100" alt="{{data.header.title}}" />
+  <img src="{{data.contacts.photo}}" class="contacts__photo" width="140" height="140" alt="{{data.header.title}}" />
 
   <address>
-    <p>email: <a href="mailto:{{data.contacts.email}}">{{data.contacts.email}}</a></p>
-    <p>telegram: <a target="_blank" rel="nofollow noopener" href="https://t.me/{{data.contacts.telegram}}">@{{data.contacts.telegram}}</a></p>
-    <p>github: <a target="_blank" rel="nofollow noopener" href="https://github.com/{{data.contacts.github}}">{{data.contacts.github}}</a></p>
-    <p>linkedin: <a target="_blank" rel="nofollow noopener" href="https://www.linkedin.com/in/{{data.contacts.linkedin}}">{{data.contacts.linkedin}}</a></p>
+    <a class="contacts__link" href="mailto:{{data.contacts.email}}">
+      <img src="/img/email.svg" width="24" height="24" alt="{{data.contacts.email}}" />
+    </a>
+    <a class="contacts__link" target="_blank" rel="nofollow noopener" href="https://t.me/{{data.contacts.telegram}}">
+      <img src="/img/telegram.svg" width="24" height="24" alt="@{{data.contacts.telegram}}" />
+    </a>
+    <a class="contacts__link" target="_blank" rel="nofollow noopener" href="https://github.com/{{data.contacts.github}}">
+      <img src="/img/github.svg" width="24" height="24" alt="{{data.contacts.github}}" />
+    </a>
+    <a class="contacts__link" target="_blank" rel="nofollow noopener" href="https://www.linkedin.com/in/{{data.contacts.linkedin}}">
+      <img src="/img/linkedin.svg" width="24" height="24" alt="{{data.contacts.linkedin}}" />
+    </a>
   </address>
 </section>

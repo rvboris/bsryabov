@@ -2,6 +2,7 @@
 
 if ('serviceWorker' in navigator && window.env === 'production') {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').then(() => {}).catch();
+    // eslint-disable-next-line no-console
+    navigator.serviceWorker.register('sw.js').then(() => {}).catch(console.log);
   });
 }

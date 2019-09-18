@@ -16,14 +16,14 @@
         "subtitle": "Javascript developer"
       },
       "contacts": {
-        "photo": "/img/me.png",
+        "photo": "/img/me.jpg",
         "email": "contact@bsryabov.ru",
         "telegram": "rvboris",
         "github": "rvboris",
         "linkedin": "rvboris"
       },
       "skills": {
-        "title": "Actual skills",
+        "title": "Current technologies",
         "items": [
           {
             "title": "client",
@@ -83,7 +83,7 @@
         "title": "Languages",
         "items": [
           "Russian — native",
-          "English — starter"
+          "English — intermediate"
         ]
       }
     }
